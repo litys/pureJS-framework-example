@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple JS framework</title>
+</head>
+<body>
+
+    <div a-controller="InputController">
+        <input a-bind="message"/>   
+        <input a-bind="message"/>   
+        <button onclick="onButtonClick()">Click!</button>
+    </div>
+
+    <!-- Importing framework -->
+    <script src="framework.js"></script>
+
+    <script> // There starts user code
+        function InputController () {
+            this.message = 'Simple JS framework!';
+        }
+
+        var myInputController = framework.controller('InputController', InputController);
+
+        function onButtonClick () {
+            myInputController.message = 'Clicked!';   
+        }
+    </script>
+</body>
+</html>
